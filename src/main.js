@@ -26,7 +26,6 @@ if(mediaScreen.matches){
     activeShare.classList.add('hidden');
 
   })
-
 }
 
 
