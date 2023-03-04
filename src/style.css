@@ -16,10 +16,14 @@
   --fw-700: 700;
 }
 
+body {
+  background-color: var(--blue-200);
+}
+
 article {
   font-family: var(--ff-main);
   width: 95%;
-  margin: 1rem auto 0;
+  margin: 1rem auto 2rem;
 }
 
 img {
@@ -66,7 +70,12 @@ article > img {
 }
 
 .share-container img[alt='share-button'] {
+  width: 30px;
+  height: 30px;
+  padding: 6px;
   margin-left: auto;
+  border-radius: 2rem;
+  cursor: pointer;
 }
 
 .share-inactive img[alt='profile'] {
@@ -93,7 +102,30 @@ article > img {
   color: var(--blue-400);
 }
 
+.share-inactive img[alt='share-button'] {
+  background-color: var(--blue-200);
+}
+
+.hidden {
+  display: none;
+}
+
 .share-acive {
   width: 100%;
   background-color: var(--blue-900);
+}
+
+.share-acive p {
+  font-size: 0.8rem;
+  letter-spacing: 5px;
+  color: var(--blue-400);
+}
+
+.share-acive img {
+  margin-left: 1.2rem;
+}
+
+.share-acive img[alt='share-button'] {
+  /* background-color: var(--blue-200); */
+  filter: brightness(0) invert(1);
 }
