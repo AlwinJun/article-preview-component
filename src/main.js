@@ -1,23 +1,32 @@
 // console.log('test')
+const shareButton = document.querySelector('.share-inactive button');
+const activeShareButton = document.querySelector('.share-active button');
+const activeShare = document.querySelector('.share-active');
+const inactiveShare = document.querySelector('.share-inactive');
+const mediaScreen = window.matchMedia('(min-width: 60.125em)');
 
-const shareButton = document.querySelector(".share-inactive img[alt='share-button']")
-
-shareButton.addEventListener('click',() => {
-  const activeShare = document.querySelector('.share-acive');
-  const activeShareButton = document.querySelector(".share-acive img[alt='share-button']")
-  const mediaScreen = window.matchMedia('(min-width: 60.125em)');
-
-  if(mediaScreen.matches){
-    activeShare.classList.remove('hidden');
+if(mediaScreen.matches){
+  shareButton.addEventListener('click',() => {
+    activeShare.classList.toggle('hidden');
+    shareButton.classList.toggle('active')
 
     if(activeShare.contains(activeShareButton)){
-      activeShare.removeChild(activeShareButton)
+      activeShare.removeChild(activeShareButton);
     }
-  }else{
+  })
+}else{
+  shareButton.addEventListener('click',() => {
+    inactiveShare.classList.add('hidden');
     activeShare.classList.remove('hidden');
-    document.querySelector('.share-inactive').classList.add('hidden');
-  }
+
+  })
+
+  activeShareButton.addEventListener('click',() => {
+    inactiveShare.classList.remove('hidden');
+    activeShare.classList.add('hidden');
+
+  })
+
+}
 
 
- 
-})
