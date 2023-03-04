@@ -67,6 +67,7 @@ article > img {
 .share-container img {
   width: 25px;
   height: 25px;
+  cursor: pointer;
 }
 
 .share-container img[alt='share-button'] {
@@ -75,7 +76,6 @@ article > img {
   padding: 6px;
   margin-left: auto;
   border-radius: 2rem;
-  cursor: pointer;
 }
 
 .share-inactive img[alt='profile'] {
